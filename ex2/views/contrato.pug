@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    h2.w3-center
+        b Contrato 
+        span= data._id
+    .w3-container.w3-margin-bottom
+        ul.w3-ul.w3-card-4
+            li
+                b idContrato: 
+                span= data._id
+            li
+                b Número Anuncio: 
+                span= data.Anuncio || 'Sem informação'
+            li
+                b Objecto Contrato: 
+                span= data.objectoContrato || 'Sem informação'
+            li
+                b Data Publicação: 
+                span= data.dataPublicacao || 'Sem informação'
+            li
+                b Data de Celebração: 
+                span= data.dataCelebracaoContrato || 'Sem informação'
+            li 
+                b Preco Contratual: 
+                if data.precoContratual
+                    span= data.precoContratual
+                    span  €
+                else
+                    span Sem informação.
+            li
+                b prazoExecucao: 
+                span= data.prazoExecucao || 'Sem informação'
+
+            li
+                b NIPC da Entidade Comunicante: 
+                span= data.NIPC_entidade_comunicante || 'Sem informação'
+
+            li
+                b Entidade Comunicante: 
+                span= data.entidade_comunicante || 'Sem informação'
+            li
+                b Fundamentação: 
+                span= data.fundamentacao || 'Sem informação'
+        a.w3-button.w3-teal.w3-margin-top(href="/")
+            b Voltar à lista de Registos
